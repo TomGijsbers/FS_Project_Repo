@@ -7,7 +7,7 @@ from queries import r0982632_queries as queries
 app = APIRouter()
 
 @app.post("/applicationForm")
-def create_applicationForm(applicationForm: models.ApplicationForm):
+def create_applicationForm(applicationForm: r0982632_models.ApplicationForm):
     query = queries.insert_applications_query
     succes = database.execute_sql_query(query,(
         applicationForm.firstName,
