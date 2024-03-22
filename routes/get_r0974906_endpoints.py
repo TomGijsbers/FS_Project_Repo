@@ -1,5 +1,6 @@
 from fastapi import APIRouter
 from queries import r0974906_queries
+import database
 app = APIRouter()
 
 @app.get("/flavours")
