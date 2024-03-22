@@ -1,13 +1,8 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-import queries.r0878924_queries
 import database
 import config
-from routes import get_r0878924_endpoints, post_r0878924_endpoints
-
-
-
-
+from routes import get_r0878924_endpoints
 
 app = FastAPI()
 
@@ -27,7 +22,7 @@ app.add_middleware(
 
 @app.get("/")
 def get_all_festivals():
-    query = queries.r0878924_queries.review_name_query
+    query = FS_Project_Repo.queries.r0878924_queries.review_name_query
     reviews = database.execute_sql_query(query)
     if isinstance(reviews, Exception):
         return reviews, 500
