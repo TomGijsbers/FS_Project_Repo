@@ -21,12 +21,5 @@ app.add_middleware(
 
 
 @app.get("/")
-def get_all_festivals():
-    query = FS_Project_Repo.queries.r0878924_queries.review_name_query
-    reviews = database.execute_sql_query(query)
-    if isinstance(reviews, Exception):
-        return reviews, 500
-    coasters_to_return = []
-    for coaster in reviews:
-        coasters_to_return.append(coaster[0])
-    return {'themeparks': coasters_to_return}
+def root():
+    return {'themeparks': 'test'}
