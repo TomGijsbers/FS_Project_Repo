@@ -1,1 +1,1 @@
-review_name_query = "SELECT * FROM scoopheaven.contact;"
+contact_name_query = "SELECT contact_id FROM scoopheaven.contact;"
