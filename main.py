@@ -22,11 +22,4 @@ app.add_middleware(
 
 @app.get("/")
 def root():
-    query = get_r0878924_endpoints.review_name_query
-    coasters = database.execute_sql_query(query)
-    if isinstance(coasters, Exception):
-        return coasters, 500
-    coasters_to_return = []
-    for coaster in coasters:
-        coasters_to_return.append(coaster[0])
-    return {'themeparks': coasters_to_return}
+    return {'themeparks': 'test'}
