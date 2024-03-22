@@ -3,7 +3,7 @@ import config
 
 def connect_to_database():
     try:
-        connection = mysql.connector.connect(host=config.db_hostname, user=config.db_username, password=config.db_password)
+        connection = mysql.connector.connect(host=config.db_hostname, user=config.db_username, password=config.db_password, database='scoopheaven')
         return connection
     except mysql.connector.Error as error:
         print("Error connecting to database:", error)
