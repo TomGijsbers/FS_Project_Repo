@@ -1,6 +1,7 @@
 from fastapi import APIRouter
-
+from queries import r0974906_queries
 app = APIRouter()
+
 
 @app.get("/flavours")
 def get_flavours_table():
