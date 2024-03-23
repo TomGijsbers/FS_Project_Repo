@@ -22,3 +22,19 @@ def get_all_reviews():
         }
         reviews_to_return.append(reviews_dictionary)
     return {'total_reviews': reviews_to_return}
+
+@app.get("/personel")
+def get_personel_by_job(job: str=None):
+    query = queries.scoopheaven_personel
+    jobtitel = database.execute_sql_query(query,(job,))
+    if isinstance(jobtitel, Exception):
+        return jobtitel, 500
+    jobs_to_return = []
+    for jobs in jobtitel:
+        jobs_dictionary = {"name": jobs[0],
+                              "job": jobs[1],
+                              "avatar": jobs[2],
+                              "quote": jobs[3]
+                              }
+        jobs_to_return.append(jobs_dictionary)
+    return {'job': jobs_to_return}
