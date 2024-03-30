@@ -29,7 +29,7 @@ def create_contact(contact: r0878924_models.contact):  # Zorg ervoor dat de impo
         contact.last_name_sender,
         contact.email_sender,
         contact.message,
-        datetime.now(),  # Dit zal de huidige tijd/datum toevoegen
+
     ))
     if succes:
         return {"status": "success"}  # Het is beter om een response object terug te sturen
