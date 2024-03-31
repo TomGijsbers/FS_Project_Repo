@@ -13,3 +13,9 @@ class contact(BaseModel):
     last_name_sender: str
     email_sender: str
     message: str
+
+
+class FaqItem(BaseModel):
+    contact_id: int
+    question: str
+    answer: str

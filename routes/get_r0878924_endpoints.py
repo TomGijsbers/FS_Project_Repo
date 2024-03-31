@@ -21,3 +21,19 @@ def get_photos():
             "upload_date": photo_details[4]
         })
     return {"photos": photo_list}
+
+
+@app.get("/faq")
+def get_faq():
+    query = queries.r0878924_queries.faq_query
+    result = database.execute_sql_query(query)
+    if isinstance(result, Exception):
+        return result, 500
+    faq_list = []
+    for faq_details in result:
+        faq_list.append({
+            "contact_id": faq_details[0],
+            "question": faq_details[1],
+            "answer": faq_details[2]
+        })
+    return {"faqs": faq_list}
