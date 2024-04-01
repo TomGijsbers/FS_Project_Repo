@@ -1,11 +1,8 @@
 from pydantic import BaseModel
 from datetime import date
-# class uploadPhoto(BaseModel):
-#     id: int
-#     name: str
-#     path: str
-#     description: str
-#     upload_date : date
+class uploadPhoto(BaseModel):
+    name: str
+    description: str
 
 
 class contact(BaseModel):
