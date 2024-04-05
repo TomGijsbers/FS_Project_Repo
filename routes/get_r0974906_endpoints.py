@@ -26,7 +26,7 @@ def get_holders_table():
     for details in response_holders_query:
         flavours_query_list.append(
             {"HolderID": details[0], "Type": details[1], "Price": details[2], "Availability": details[3],
-             "Vegan": details[4], "SugarFree": details[4]})
+             "Vegan": details[4], "SugarFree": details[5]})
     return {"Holders": flavours_query_list}
 
 @app.get("/toppings")
@@ -39,5 +39,5 @@ def get_toppings_table():
     for details in response_toppings_query:
         flavours_query_list.append(
             {"ToppingID": details[0], "Type": details[1], "Price": details[2], "Availability": details[3],
-             "Vegan": details[4], "SugarFree": details[4]})
+             "Vegan": details[4], "SugarFree": details[5]})
     return {"Toppings": flavours_query_list}
