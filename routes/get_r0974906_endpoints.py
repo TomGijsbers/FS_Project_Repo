@@ -41,3 +41,14 @@ def get_toppings_table():
             {"ToppingID": details[0], "Type": details[1], "Price": details[2], "Availability": details[3],
              "Vegan": details[4], "SugarFree": details[5]})
     return {"Toppings": flavours_query_list}
+@app.get("/quotes")
+def get_quote():
+    quote_query = r0974906_queries.quotes_query
+    response_quote_query = database.execute_sql_query(quote_query)
+    if isinstance(response_quote_query, Exception):
+        return response_quote_query, 500
+    quotes_list = []
+    for quote in response_quote_query:
+        quotes_list.append(quote)
+
+    return {"Quotes":quotes_list}
