@@ -9,3 +9,6 @@ class ApplicationForm(BaseModel):
     birthdate: date
     gender: str
     emailaddress : str
+
+class Subscribers(BaseModel):
+    email: str

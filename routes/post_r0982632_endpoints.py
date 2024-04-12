@@ -18,3 +18,12 @@ def create_applicationForm(applicationForm: r0982632_models.ApplicationForm):
     ))
     if succes:
         return applicationForm
+
+@app.post("/subscribe")
+def create_subscribe(subscription: r0982632_models.Subscribers):
+    query = queries.insert_subscriptions_query
+    success = database.execute_sql_query(query, (
+        subscription.email,
+    ))
+    if success:
+        return subscription
