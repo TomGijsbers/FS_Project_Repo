@@ -5,3 +5,5 @@ insert_applications_query = 'INSERT INTO scoopheaven.applicationform (firstName,
 scoopheaven_reviews = 'SELECT c.name, c.avatar, r.reviewText, r.rating, r.time FROM scoopheaven.reviews r JOIN customers c ON r.customersId = c.customersId;'
 
 scoopheaven_personel = 'SELECT name, job, avatar, quote FROM scoopheaven.personnel WHERE job = %s'
+
+insert_subscriptions_query = 'INSERT INTO scoopheaven.subscribers (email) VALUES (%s);'
