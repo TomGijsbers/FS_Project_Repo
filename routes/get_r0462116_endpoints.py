@@ -26,7 +26,7 @@ def get_all_events():
 
 @app.get("/reservations")
 def get_amount_for_date(email: str = ''):
-    query = queries.reservations_query.reservations_query
+    query = queries.reservations_query
     reservations = database.execute_sql_query(query, (
         email,))
     if isinstance(reservations, Exception):
