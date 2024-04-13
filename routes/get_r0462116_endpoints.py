@@ -1,15 +1,14 @@
 from fastapi import APIRouter
-
-import queries.r0462116_queries
-from queries import r0974906_queries
 import database
+from queries import r0462116_queries as queries
+
 
 app = APIRouter()
 
 
 @app.get("/events")
 def get_all_events():
-    query = queries.r0462116_queries.events_query
+    query = queries.events_query
     events = database.execute_sql_query(query)
     if isinstance(events, Exception):
         return events, 500
@@ -27,7 +26,7 @@ def get_all_events():
 
 @app.get("/reservations")
 def get_amount_for_date(email: str = ''):
-    query = queries.r0462116_queries.reservations_query.reservations_query
+    query = queries.reservations_query.reservations_query
     reservations = database.execute_sql_query(query, (
         email,))
     if isinstance(reservations, Exception):
