@@ -18,7 +18,8 @@ def get_all_events():
                             "date":event[1],
                             "description": event[2],
                             "Participants": event[3],
-                            "max_participants": event[4]
+                            "max_participants": event[4],
+                            "image_path": event[5]
                             }
         events_to_return.append(event_dictionary)
     return({'events': events_to_return})
