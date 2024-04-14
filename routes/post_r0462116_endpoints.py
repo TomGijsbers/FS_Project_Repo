@@ -1,9 +1,10 @@
+#Daan Durt
 from fastapi import APIRouter
 import database
 from queries import r0462116_queries as queries
 from models import r0462116_models as models
 
-app = APIRouter
+app = APIRouter()
 
 @app.post("/reservations")
 def create_reservation(reservations: models.Reservation):
