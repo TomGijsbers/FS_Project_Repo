@@ -1,10 +1,12 @@
 from fastapi import APIRouter
 import database
 from queries import r0462116_queries as queries
-import models.r0462116_models as models
+from models import r0462116_models as models
+
+app = APIRouter
 
 @app.post("/reservations")
-def create_reservation(reservations: models.Resrvation):
+def create_reservation(reservations: models.Reservation):
     query = queries.insert_reservation
     success = database.execute_sql_query(query, (
         reservations.first_name,

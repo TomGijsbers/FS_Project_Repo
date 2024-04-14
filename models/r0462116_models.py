@@ -1,7 +1,7 @@
 from pydantic import BaseModel
 from datetime import datetime
 
-class Resrvation(BaseModel):
+class Reservation(BaseModel):
     first_name: str
     last_name: str
     email_address: str
