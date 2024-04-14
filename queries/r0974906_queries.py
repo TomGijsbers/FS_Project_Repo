@@ -2,4 +2,3 @@ flavours_query = "SELECT FlavorID, FlavorName, Price, Availability, Vegan, Sugar
 holders_query = "SELECT HolderID, Type, Price, Availability, Vegan, SugarFree FROM scoopheaven.holders;"
 toppings_query = "SELECT ToppingID, Type, Price, Availability, Vegan, SugarFree FROM scoopheaven.toppings;"
 quotes_query = "SELECT quote FROM scoopheaven.icecreamquotes;"
-insert_answer_query = "INSERT INTO scoopheaven.reasons (Email, Flavour, Reason) VALUES (%s, %s, %s);"
